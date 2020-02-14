@@ -1,8 +1,4 @@
-<?php
-if($_GET['submit'] == "yes"){
-    
-}
-?>
+<!-- PHP has been moved to runBraifuck.php and is run inside of an Iframe-->
 <!doctype html>
 <html lang="en">
 <head>
@@ -13,12 +9,14 @@ if($_GET['submit'] == "yes"){
     <title>BrainFunk Interpreter</title>
 </head>
 <body>
-<form action="index.php" method="get" >
+<form action="runBrainfuck.php" method="post" target="program" >
     <label>Input Code</label>
     <input type="text" name="code" id="code">
     <label>Program Inputs</label>
     <input type="text" name="inputs" id="inputs">
-    <input type="button" name="compileThis" id="compileThis">
+    <input type="submit" name="compileThis" id="compileThis">
 </form>
+<iframe name="program" style=""> <!-- A bad way to submit but not refresh the page -->
+</iframe>
 </body>
 </html>
