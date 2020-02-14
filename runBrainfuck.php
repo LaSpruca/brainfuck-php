@@ -9,7 +9,12 @@ include "include/SyntaxTree.php";
 $codeRegexAllowedCharacters = "~[\[\]<>+-.,,]~";
 $inputRegexAllowedCharacters = "~^[0-9]+$~";
 
-echo "<div style='font-family: \"Comic Sans MS\";'>";
+echo "<style>@font-face {
+font-family: \"Comic Sans\";
+src: url('comic.ttf');
+}</style>";
+
+echo "<div style='font-family: \"Comic Sans\";'>";
 $rawCode = $_POST['code'];
 $rawProgramInputs = $_POST['inputs'];
 echo "Checking code<br>";
