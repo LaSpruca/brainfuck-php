@@ -37,6 +37,6 @@ echo "<br>Code:<br>";
 print_r($code);
 echo "<br>Inputs:<br>";
 print_r($input);
-echo "<br>Running Code";
+echo "<br>Running Code<br>";
 execute($code,$input);
-echo "Done";
+echo "<br>Done";
