@@ -6,7 +6,7 @@ if (isset($_POST['compileThis'])){
 include "include/SyntaxTree.php";
 
 //Process Data
-$codeRegexAllowedCharacters = "~[\[\]<>+-.,]~";
+$codeRegexAllowedCharacters = "~[\[\]<>+-.,,]~";
 $inputRegexAllowedCharacters = "~^[0-9]+$~";
 
 $rawCode = $_POST['code'];

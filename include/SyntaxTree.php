@@ -22,11 +22,11 @@ abstract class Operator {
 
 function execute($code, array $inputs, array $codeBraces) {
     $cells = array_fill(0, 1300, 0);
+    print_r($inputs);
     $pointer = 0;
     $input_pointer = 0;
     $codePointer = 0;
     while($codePointer < count($code)){
-        $codePointer++;
         $operator = $code[$codePointer];
         switch ($operator) {
             case Operator::PLUS :
@@ -61,8 +61,10 @@ function execute($code, array $inputs, array $codeBraces) {
 
                 break;
             default:
+                echo "Not recognised Character,",$operator;
                 break;
         }
+        $codePointer++;
     }
 
 }
