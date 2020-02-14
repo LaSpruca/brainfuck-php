@@ -29,25 +29,37 @@ function execute($code, array $inputs, array $codeBraces) {
     while($codePointer < count($code)){
         $operator = $code[$codePointer];
         switch ($operator) {
-            case Operator::PLUS :
+            // +
+            case Operator::PLUS:
                 $cells[$pointer]++;
                 break;
+
+            // -
             case Operator::MINUS:
                 $cells[$pointer]--;
                 break;
+
+            // <
             case Operator::L_ANGLE_BRACE:
                 $pointer--;
                 break;
+
+            // >
             case Operator::R_ANGLE_BRACE:
                 $pointer++;
                 break;
+
+            // .
             case Operator::PERIOD:
-                echo $cells[$pointer],"<br>";
                 break;
+
+            // ,
             case Operator::COMMA:
                 $cells[$pointer] = $inputs[$input_pointer];
                 $input_pointer++;
                 break;
+
+            // [
             case Operator::L_SQUARE_BRACE:
                 //echo "Left Bracket<br>";
                 break;
