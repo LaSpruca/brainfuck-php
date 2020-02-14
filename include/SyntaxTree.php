@@ -8,7 +8,7 @@ class OperatorGroup {
      }
 }
 
-class Operator extends Enum {
+abstract class Operator {
     const PLUS = "+";
     const MINUS = "-";
     const COMMA = ",";
