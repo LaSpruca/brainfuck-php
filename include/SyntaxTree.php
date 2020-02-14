@@ -17,7 +17,7 @@ function execute($code, array $inputs, array $codeBraces) {
     }
 
     $cells = array_fill(0, 1300, 0);
-    print_r($inputs);
+    echo count($code)," brainfuck commands executing <br>";
     $pointer = 0;
     $input_pointer = 0;
     $codePointer = 0;
@@ -46,7 +46,7 @@ function execute($code, array $inputs, array $codeBraces) {
 
             // .
             case Operator::PERIOD:
-                echo $cells[$pointer];
+                echo $cells[$pointer],"<br>";
                 break;
 
             // ,
