@@ -20,12 +20,13 @@ abstract class Operator {
     const R_SQUARE_BRACE = "]";
 }
 
-function execute($code, array $inputs) {
+function execute(array $code, array $inputs) {
     $cells = array_fill(0, 1300, 0);
     $pointer = 0;
     $input_pointer = 0;
 
-    foreach($code as $operator) {
+    for($i = 0; i < sizeof($code); $i++) {
+        $operator = $code[$i];
         switch ($operator) {
             case Operator::PLUS :
                 $cells[$pointer]++;
@@ -48,8 +49,8 @@ function execute($code, array $inputs) {
             case Operator::L_SQUARE_BRACE:
                 if (input != 0) {
                     do {
-                        $pointer++;
-                    } while ($cells[pointer] != Operator::R_SQUARE_BRACE);
+                        $i++;
+                    } while ($code[$i] != Operator::R_SQUARE_BRACE);
                 }
                 break;
             default:
