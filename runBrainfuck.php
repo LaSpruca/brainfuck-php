@@ -34,3 +34,7 @@ echo "<br>Code:<br>";
 print_r($code);
 echo "<br>Inputs:<br>";
 print_r($input);
+$memoryArray = array_fill(0,129,0); //Max of 129 memory addresses because yes
+for($i=0;$i<count($code);$i++){
+    echo "Looks like we haven't coded '",$code[i],"' in yet. Possibly because we haven't codded any yet";
+}
