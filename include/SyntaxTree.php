@@ -18,6 +18,7 @@ function execute($code, array $inputs, array $codeBraces) {
 
     $cells = array_fill(0, 1300, 0);
     echo count($code)," brainfuck commands executing <br>";
+    echo "Program Output:<br>";
     $pointer = 0;
     $input_pointer = 0;
     $codePointer = 0;

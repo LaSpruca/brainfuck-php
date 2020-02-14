@@ -16,6 +16,20 @@
     background-color: pink;
 }
 
+#program_box {
+   perspective: 800;  
+
+  transform: rotate(45deg);
+  animation-name: program_box_ani;
+  animation-duration: 160s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+@keyframes program_box_ani {
+  0% {transform: rotate(0deg);}
+  100% {transform: rotate(360deg);}
+}
+
 .input-container {
     position: relative;
     top: 50%;
