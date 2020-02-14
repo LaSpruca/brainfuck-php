@@ -15,8 +15,9 @@ function execute($code, array $inputs, array $codeBraces) {
     if (!set_time_limit(0)){
         print("<div style='color: red;'>[ERROR]</div>Unable to set execution timeout");
     }
+
     $cells = array_fill(0, 1300, 0);
-    print_r($inputs);
+    echo count($code)," brainfuck commands executing <br>";
     $pointer = 0;
     $input_pointer = 0;
     $codePointer = 0;
@@ -45,6 +46,7 @@ function execute($code, array $inputs, array $codeBraces) {
 
             // .
             case Operator::PERIOD:
+                echo $cells[$pointer],"<br>";
                 break;
 
             // ,
