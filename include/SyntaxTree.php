@@ -1,13 +1,4 @@
 <?php
-
-class OperatorGroup {
-    public array $operators;
-
-     function append_child(Operator $child){
-        array_push($this->operators, $child);
-     }
-}
-
 abstract class Operator {
     const PLUS = "+";
     const MINUS = "-";
