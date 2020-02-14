@@ -8,21 +8,23 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>BrainFunk Interpreter</title>
 
-    <link type="text/css" rel="stylesheet" href="main.css">
+    <link rel="stylesheet/less" type="text/css" href="main.less" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.9.0/less.min.js" ></script>
 </head>
 <body>
     <div class="input">
-        <div class="box">
-            <form action="runBrainfuck.php" method="post" target="program" >
-                <label>Input Code</label>
-                <input type="text" name="code" id="code">
-                <label>Program Inputs</label>
-                <input type="text" name="inputs" id="inputs">
-                <input type="submit" name="compileThis" id="compileThis">
-                <iframe name="program" style=""> <!-- A bad way to submit but not refresh the page -->
-                </iframe>
-            </form>
+        <div class="input-container">
+
         </div>
+        <form action="runBrainfuck.php" method="post" target="program" >
+            <label>Input Code</label>
+            <input type="text" name="code" id="code">
+            <label>Program Inputs</label>
+            <input type="text" name="inputs" id="inputs">
+            <input type="submit" name="compileThis" id="compileThis">
+        </form>
+        <iframe name="program" style=""> <!-- A bad way to submit but not refresh the page -->
+        </iframe>
     </div>
 </body>
 </html>

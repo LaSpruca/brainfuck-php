@@ -12,6 +12,9 @@ abstract class Operator {
 }
 
 function execute($code, array $inputs, array $codeBraces) {
+    if (!set_time_limit(0)){
+        print("<div style='color: red;'>[ERROR]</div>Unable to set execution timeout");
+    }
     $cells = array_fill(0, 1300, 0);
     print_r($inputs);
     $pointer = 0;
