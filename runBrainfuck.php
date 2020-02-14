@@ -54,12 +54,7 @@ foreach($code as $i=>$x){ //i is index, x is the text at index
         }
     }
 }
-echo "<br>";
-print_r($codeBraces);
-echo "<br>Code:<br>";
-print_r($code);
-echo "<br>Inputs:<br>";
-print_r($input);
+
 //sleep(3);
 echo "<br>Running Code<br>";
 execute($code,$input,$codeBraces);
