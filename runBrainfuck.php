@@ -3,6 +3,7 @@
 //It is also completely vulnerable to injection attacks lol
 if (isset($_POST['compileThis'])){
 
+include "include/SyntaxTree.php";
 
 //Process Data
 $codeRegexAllowedCharacters = "~[\[\]<>+-.,]~";
@@ -19,6 +20,8 @@ foreach ($splitRawCode as $x){
     }
 
 }
+
+
 echo "Checking Input<br>";
 $input = array();
 $splitRawProgramInputs=  explode (",",$rawProgramInputs);
@@ -34,7 +37,6 @@ echo "<br>Code:<br>";
 print_r($code);
 echo "<br>Inputs:<br>";
 print_r($input);
-$memoryArray = array_fill(0,129,0); //Max of 129 memory addresses because yes
-for($i=0;$i<count($code);$i++){
-    echo "Looks like we haven't coded '",$code[$i],"' in yet. Possibly because we haven't codded any yet";
-}
+echo "<br>Running Code";
+execute($code,$input);
+echo "Done";

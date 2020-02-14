@@ -20,12 +20,12 @@ abstract class Operator {
     const R_SQUARE_BRACE = "]";
 }
 
-function execute(OperatorGroup $parsed_source, array $inputs) {
+function execute($code, array $inputs) {
     $cells = array_fill(0, 1300, 0);
     $pointer = 0;
     $input_pointer = 0;
 
-    foreach($parsed_source->operators as $operator) {
+    foreach($code as $operator) {
         switch ($operator) {
             case Operator::PLUS :
                 $cells[$pointer]++;
