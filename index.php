@@ -14,17 +14,18 @@
 <body>
     <div class="input">
         <div class="input-container">
+            <form action="runBrainfuck.php" method="post" target="program" >
+                <label>Input Code</label>
+                <input type="text" name="code" id="code" class="code-input">
 
+                <label>Program Inputs</label>
+                <input type="text" name="inputs" id="inputs" class="code-input">
+
+                <input type="submit" name="compileThis" id="compileThis">
+            </form>
+            <iframe name="program" style=""> <!-- A bad way to submit but not refresh the page -->
+            </iframe>
         </div>
-        <form action="runBrainfuck.php" method="post" target="program" >
-            <label>Input Code</label>
-            <input type="text" name="code" id="code">
-            <label>Program Inputs</label>
-            <input type="text" name="inputs" id="inputs">
-            <input type="submit" name="compileThis" id="compileThis">
-        </form>
-        <iframe name="program" style=""> <!-- A bad way to submit but not refresh the page -->
-        </iframe>
     </div>
 </body>
 </html>

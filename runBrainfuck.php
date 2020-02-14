@@ -9,6 +9,7 @@ include "include/SyntaxTree.php";
 $codeRegexAllowedCharacters = "~[\[\]<>+-.,,]~";
 $inputRegexAllowedCharacters = "~^[0-9]+$~";
 
+echo "<div style='font-family: \"Comic Sans MS\";'>";
 $rawCode = $_POST['code'];
 $rawProgramInputs = $_POST['inputs'];
 echo "Checking code<br>";
@@ -64,3 +65,4 @@ print_r($input);
 echo "<br>Running Code<br>";
 execute($code,$input,$codeBraces);
 echo "Done";
+echo "</div>";
