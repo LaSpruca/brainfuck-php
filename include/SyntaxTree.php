@@ -28,30 +28,30 @@ function execute(array $code, array $inputs) {
     for($i = 0; $i < (sizeof($code)) ; $i++) {
         // Check to see that the pointer is not below 0, if so quitting execution
         if ($pointer < 0){
-            print("<br>[ERROR] pointer went below 0!!<br>");
+            print("<br><div style='color: red'>[ERROR]</div> pointer went below 0!!<br>");
             return;
         }
         $operator = $code[$i];
         //print("$operator\t $i\t $cells[$pointer]\t $pointer<br>");
+
+        // Checking for overflow
+        if($cells[$pointer] > 255){
+            $cells[$pointer] = 0;
+        } else if ($cells[$pointer] < 0) {
+            $cells[$pointer] = 255;
+        }
+
 
         // Switch statment to find out weather what to do with the code given
         switch ($operator) {
             // +
             case Operator::PLUS:
                 $cells[$pointer]++;
-                if ($cells[$pointer] > 255){
-                    print("<br>ADD OVERFLOW<br>");
-                    $cells[$pointer] = 0;
-                }
                 break;
 
             // -
             case Operator::MINUS:
                 $cells[$pointer]--;
-                if ($cells[$pointer] < 0) {
-                    print("<br>MINUS OVERFLOW<br>");
-                    $cells[$pointer] = 255;
-                }
                 break;
 
             // <
@@ -77,22 +77,28 @@ function execute(array $code, array $inputs) {
             // [
             case Operator::L_SQUARE_BRACE:
                 if ($cells[$pointer] != 0) {
-                    print($cells[$pointer]);
-                    do {
+                    while ($code[$i] != Operator::R_SQUARE_BRACE) {
                         $i++;
-                    } while ($code[$i] != Operator::R_SQUARE_BRACE);
-                    $i--;
+                        if ($i < 0){
+                            print("<br><div style=\"color: red\">[ERROR]</div> Unable to find \'[\'");
+                            return;
+                        }
+                    }
+                    //print("<br>$i: $operator");
                 }
                 break;
 
             // ]
             case Operator::R_SQUARE_BRACE:
                 if($cells[$pointer] == 0) {
-                    print($cells[$pointer]);
-                    do{
+                    while($code[$i] != Operator::L_SQUARE_BRACE) {
                         $i--;
-                    } while ($code[$i] != Operator::L_SQUARE_BRACE);
-                    $i--;
+                        if ($i < 0){
+                            print("<br><div style=\"color: red\">[ERROR]</div> Unable to find \']\'");
+                            return;
+                        }
+                    }
+                    //print("<br>$i: $operator");
                 }
                 break;
             default:
