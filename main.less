@@ -21,14 +21,17 @@
     background-color: pink;
 }
 
-#program_box {
-   perspective: 800;  
+#program_box{
 
   transform: rotate(45deg);
   animation-name: program_box_ani;
   animation-duration: 1s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
+  animation-play-state: running; 
+}
+#program_box:hover{
+    animation-play-state: paused !important;
 }
 @keyframes program_box_ani {
   0% {transform: rotate(0deg);}

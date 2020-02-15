@@ -24,8 +24,9 @@
 
                 <input type="submit" value="Run code" name="compileThis" id="compileThis">
             </form>
-            <iframe name="program" id="program_box" style=""> <!-- A bad way to submit but not refresh the page -->
-            </iframe>
+            <div id="program_box"><iframe name="program" style=""> <!-- A bad way to submit but not refresh the page -->
+                </iframe></div>
+
             <br>
             <br>
             <br>
