@@ -12,6 +12,7 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.9.0/less.min.js" ></script>
 </head>
 <body>
+<h3 style="text-align: center;">PREPARE FOR YOU BRAIN TO BE FUCKED!</h3>
     <div class="input">
         <div class="input-container">
             <form action="runBrainfuck.php" method="post" target="program" >
