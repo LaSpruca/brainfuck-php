@@ -16,17 +16,29 @@
     <div class="input">
         <div class="input-container">
             <form action="runBrainfuck.php" method="post" target="program" >
-                <label>Input Code</label>
+                <label>Brainfuck Code</label>
                 <input type="text" name="code" id="code" class="code-input">
 
-                <label>Program Inputs</label>
+                <label>Comma-separated Inputs</label>
                 <input type="text" name="inputs" id="inputs" class="code-input">
 
-                <input type="submit" name="compileThis" id="compileThis">
+                <input type="submit" value="Run code" name="compileThis" id="compileThis">
             </form>
             <iframe name="program" id="program_box" style=""> <!-- A bad way to submit but not refresh the page -->
             </iframe>
+            <br>
+            <br>
+            <br>
+
+            <h2>Instructions on how to use:</h2>
+            <h4>
+            <ul>
+                <li>Don't.</li>
+            </ul>
+
+            </h4>
         </div>
     </div>
+
 </body>
 </html>
