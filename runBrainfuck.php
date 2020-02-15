@@ -63,6 +63,8 @@ foreach($code as $i=>$x){ //i is index, x is the text at index
 
 //sleep(3);
 echo "<br>Running Code<br>";
+$codeTimeStart =microtime(true);
 execute($code,$input,$codeBraces);
-echo "Done";
+$codeTime = $codeTimeStart - microtime(true);
+echo "Done, Runtime:",$codeTime;
 echo "</div>";
